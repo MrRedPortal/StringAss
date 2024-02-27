@@ -83,7 +83,7 @@ String& String::Append(const String& _str)
 		// Calculate the new capacity
 		size_t newCapacity = newLength + 1; // +1 for the null terminator
 
-		char* newStr = new char[newCapacity];// Allocate a new buffer with the new capacity
+		char* newStr = new char[newCapacity]; // Allocate a new buffer with the new capacity
 		strcpy(newStr, m_str);
 		strcat(newStr, _str.m_str);
 
@@ -102,9 +102,13 @@ String& String::Append(const String& _str)
 	// Update the length
 	m_length = newLength;
 
+	// Ensure null-termination
+	m_str[newLength] = '\0';
+
 	// Return a reference to this object to allow chaining
 	return *this;
 }
+
 
 String& String::Prepend(const String& _str)
 {
@@ -269,5 +273,74 @@ String& String::ReadFromConsole()
 String& String::WriteToConsole()
 {
 	std::cout << m_str;
+	return *this;
+}
+
+bool String::operator==(const String& _other)
+{
+	return EqualTo(_other);
+}
+
+bool String::operator!=(const String& _other)
+{
+	return !EqualTo(_other);
+}
+
+String& String::operator=(const String& _other)
+{
+	//Check for self assignment
+	if (this != &_other) {
+		delete[] m_str; // Delete old content
+
+		// Copy new content
+		m_length = _other.m_length;
+		m_capacity = _other.m_capacity;
+		m_str = new char[m_capacity];
+		strcpy(m_str, _other.m_str);
+	}
+	return *this;
+}
+
+char& String::operator[](size_t _index)
+{
+	// Ensure that the index is within bounds
+	if (_index >= m_length) {
+		static char nullChar = '\0';
+		return nullChar;
+	}
+
+	return m_str[_index];
+}
+
+const char& String::operator[](size_t _index) const {
+	// Ensure that the index is within bounds
+	if (_index >= m_length) {
+		static char nullChar = '\0';
+		return nullChar;
+	}
+
+	return m_str[_index];
+}
+
+bool String::operator<(String& _other)
+{
+	return strcmp(m_str, _other.m_str) < 0;
+}
+
+const bool String::operator<(const String& _other) const {
+	return strcmp(m_str, _other.m_str) < 0;
+}
+
+// Not working
+const String& String::operator+(const String& _str) const
+{
+	String result(*this);
+	// Append the content of _str to the result
+	result.Append(_str);
+	return result;
+}
+
+String& String::operator+=(const String& _str) {
+	Append(_str);
 	return *this;
 }

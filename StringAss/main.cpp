@@ -1,67 +1,73 @@
 #include <iostream>
-#include "String.h"
-
+#include "String.h" // Assuming your String class is declared in String.h
 
 int main() {
-    // Create a String object
-    String myString;
+    // Test Length(), CharacterAt(), EqualTo(), Append(), Prepend(), CStr(), ToLower(), ToUpper()
+    String str("Hello");
+    std::cout << "Length: " << str.Length() << std::endl;
+    std::cout << "Character at index 2: " << str.CharacterAt(2) << std::endl;
+    std::cout << "EqualTo(\"Hello\"): " << (str.EqualTo("Hello") ? "true" : "false") << std::endl;
 
-    // Read input from the console
-    myString.ReadFromConsole();
+    String appendStr(" world!");
+    str.Append(appendStr);
+    std::cout << "Appended string: " << str.CStr() << std::endl;
 
-    // Print the string
-    std::cout << "String read from console: ";
-    myString.WriteToConsole();
+    String prependStr("Hi, ");
+    str.Prepend(prependStr);
+    std::cout << "Prepended string: " << str.CStr() << std::endl;
+
+    std::cout << "Lowercase string: ";
+    str.ToLower();
+    std::cout << str.CStr() << std::endl;
+
+    std::cout << "Uppercase string: ";
+    str.ToUpper();
+    std::cout << str.CStr() << std::endl;
+
+    // Test Find(), Replace()
+    String testString("hello world, hello!");
+    String findString("hello");
+    String replaceString("hi");
+    std::cout << "Find(\"hello\"): " << testString.Find(findString) << std::endl;
+    std::cout << "Replace(\"hello\", \"hi\"): ";
+    testString.Replace(findString, replaceString);
+    std::cout << testString.CStr() << std::endl;
+
+    // Test ReadFromConsole(), WriteToConsole()
+    std::cout << "Enter a string: ";
+    String userInput;
+    userInput.ReadFromConsole();
+    std::cout << "User input: ";
+    userInput.WriteToConsole();
     std::cout << std::endl;
 
-    // Display the original input
-    std::cout << "Original string: ";
-    myString.WriteToConsole();
-    std::cout << std::endl;
+    // Test Equality Operator ( == )
+    String str1("hello");
+    String str2("world");
+    std::cout << "str1 == str2: " << (str1 == str2 ? "true" : "false") << std::endl;
 
-    // Convert the string to uppercase
-    myString.ToUpper();
-    std::cout << "String in uppercase: ";
-    myString.WriteToConsole();
-    std::cout << std::endl;
+    // Test Subscript Operator ( [] )
+    std::cout << "Character at index 2: " << str[2] << std::endl;
 
-    // Convert the string to lowercase
-    myString.ToLower();
-    std::cout << "String in lowercase: ";
-    myString.WriteToConsole();
-    std::cout << std::endl;
+    // Test Assignment Operator ( = )
+    String assignedString;
+    assignedString = str;
+    std::cout << "Assigned string: " << assignedString.CStr() << std::endl;
 
-    // Find a substring
-    String findString("world");
-    size_t index = myString.Find(findString);
-    if (index != static_cast<size_t>(-1)) {
-        std::cout << "Substring '" << findString.CStr() << "' found at index: " << index << std::endl;
-    }
-    else {
-        std::cout << "Substring '" << findString.CStr() << "' not found." << std::endl;
-    }
+    // Test LessThan Operator ( < )
+    String lessThanStr("apple");
+    String greaterThanStr("banana");
+    std::cout << "lessThanStr < greaterThanStr: " << (lessThanStr < greaterThanStr ? "true" : "false") << std::endl;
 
-    // Append a string
-    String appendString(" from Nic's computer");
-    myString.Append(appendString);
-    std::cout << "String after appending: ";
-    myString.WriteToConsole();
-    std::cout << std::endl;
+    // Test Plus Operator ( + )
+    String plusStr = str1 + str2;
 
-    // Prepend a string
-    String prependString("Good evening ");
-    myString.Prepend(prependString);
-    std::cout << "String after prepending: ";
-    myString.WriteToConsole();
-    std::cout << std::endl;
+    std::cout << "Concatenated string: " << plusStr.CStr() << std::endl;
 
-    // Replace a substring
-    String replaceString("hello world");
-    String replaceWithString("everyone");
-    myString.Replace(replaceString, replaceWithString);
-    std::cout << "String after replacing: ";
-    myString.WriteToConsole();
-    std::cout << std::endl;
+    // Test Plus Equals Operator ( += )
+    String plusEqualsStr("Hello");
+    plusEqualsStr += " world!";
+    std::cout << "+= result: " << plusEqualsStr.CStr() << std::endl;
 
     return 0;
 }

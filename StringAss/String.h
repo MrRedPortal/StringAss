@@ -44,6 +44,12 @@ public:
 	char& operator[](size_t _index);
 	const char& operator[](size_t _index) const;
 
+	bool operator<(String& _other);
+	const bool operator<(const String& _other) const;
+
+	const String& operator+(const String& _str) const; 
+	String& operator+=(const String& _str);
+
 private:
 	char* m_str;
 	size_t m_length;
