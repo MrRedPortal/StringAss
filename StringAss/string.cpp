@@ -262,6 +262,12 @@ String& String::ReadFromConsole()
 	strcpy(m_str, buffer);
 	m_length = inputLength;
 
-	// Return a reference to this object to allow chaining
+	// Return a reference to this object
+	return *this;
+}
+
+String& String::WriteToConsole()
+{
+	std::cout << m_str;
 	return *this;
 }
