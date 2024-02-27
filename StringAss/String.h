@@ -47,7 +47,7 @@ public:
 	bool operator<(String& _other);
 	const bool operator<(const String& _other) const;
 
-	const String& operator+(const String& _str) const; 
+	String operator+(const String& _str) const; 
 	String& operator+=(const String& _str);
 
 private:

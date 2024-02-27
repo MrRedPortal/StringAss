@@ -331,13 +331,11 @@ const bool String::operator<(const String& _other) const {
 	return strcmp(m_str, _other.m_str) < 0;
 }
 
-// Not working
-const String& String::operator+(const String& _str) const
-{
+
+String String::operator+(const String& _str) const {
 	String result(*this);
-	// Append the content of _str to the result
 	result.Append(_str);
-	return result;
+	return result; // Return by value, not by reference
 }
 
 String& String::operator+=(const String& _str) {

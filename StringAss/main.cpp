@@ -9,7 +9,7 @@ int main() {
     std::cout << "EqualTo(\"Hello\"): " << (str.EqualTo("Hello") ? "true" : "false") << std::endl;
 
     String appendStr(" world!");
-    str.Append(appendStr);
+    str.Append("appendStr");
     std::cout << "Appended string: " << str.CStr() << std::endl;
 
     String prependStr("Hi, ");
@@ -60,8 +60,7 @@ int main() {
     std::cout << "lessThanStr < greaterThanStr: " << (lessThanStr < greaterThanStr ? "true" : "false") << std::endl;
 
     // Test Plus Operator ( + )
-    String plusStr = str1 + str2;
-
+    String plusStr(str1 + str2);
     std::cout << "Concatenated string: " << plusStr.CStr() << std::endl;
 
     // Test Plus Equals Operator ( += )
