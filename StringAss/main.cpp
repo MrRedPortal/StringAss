@@ -25,7 +25,7 @@ int main() {
     std::cout << str.CStr() << std::endl;
 
     // Test Find(), Replace()
-    String testString("hello world, hello!");
+    String testString("hello world, hello!hello");
     String findString("hello");
     String replaceString("hi");
     std::cout << "Find(\"hello\"): " << testString.Find(findString) << std::endl;
@@ -44,6 +44,8 @@ int main() {
     // Test Equality Operator ( == )
     String str1("hello");
     String str2("world");
+    std::cout << "str1: " << str1.CStr() << std::endl;
+    std::cout << "str2: " << str2.CStr() << std::endl;
     std::cout << "str1 == str2: " << (str1 == str2 ? "true" : "false") << std::endl;
 
     // Test Subscript Operator ( [] )
@@ -60,7 +62,7 @@ int main() {
     std::cout << "lessThanStr < greaterThanStr: " << (lessThanStr < greaterThanStr ? "true" : "false") << std::endl;
 
     // Test Plus Operator ( + )
-    String plusStr(str1 + str2);
+    String plusStr = str1 + str2;
     std::cout << "Concatenated string: " << plusStr.CStr() << std::endl;
 
     // Test Plus Equals Operator ( += )

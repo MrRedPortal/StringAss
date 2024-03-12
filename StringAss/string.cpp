@@ -193,35 +193,52 @@ size_t String::Find(size_t _startIndex, const String& _str)
 
 String& String::Replace(const String& _find, const String& _replace)
 {
-	// find first occurance of _find
-	size_t index = Find(_find);
-
-	// if not found return
-	if(index == static_cast<size_t>(-1)) {
+	// Check if _find and _replace are the same
+	if (_find.EqualTo(_replace))
 		return *this;
-	}
 
-	size_t newLength = m_length - _find.m_length + _replace.m_length;
-	
-	//check length and capacity
-	if(newLength >= m_capacity) {
-		size_t newCapacity = newLength + 1;
-		char* newStr = new char[newCapacity];
-		strcpy(newStr, m_str);
-		strcpy(newStr + index, _replace.m_str);
-		strcpy(newStr + index + _replace.m_length, m_str + index + _find.m_length);
-		delete[] m_str;
-		m_str = newStr;
-		m_capacity = newCapacity;
-	} else {
-		memmove(m_str + index + _replace.m_length, m_str + index + _find.m_length, m_length - index - _find.m_length + 1);
-		memcpy(m_str + index, _replace.m_str, _replace.m_length);
-	}
+	// Start searching from the beginning of the string
+	size_t index = 0;
 
-	m_length = newLength;
+	// Repeat until no more occurrences are found
+	while ((index = Find(index, _find)) != static_cast<size_t>(-1))
+	{
+		// Replace the occurrence
+		size_t newLength = m_length - _find.m_length + _replace.m_length;
+
+		// Check length and capacity
+		if (newLength >= m_capacity)
+		{
+			size_t newCapacity = newLength + 1;
+			char* newStr = new char[newCapacity];
+			// Copy the part before the occurrence
+			strncpy(newStr, m_str, index);
+			
+			strcpy(newStr + index, _replace.m_str);
+			// Copy the part after the occurrence
+			strcpy(newStr + index + _replace.m_length, m_str + index + _find.m_length);
+			delete[] m_str;
+			m_str = newStr;
+			m_capacity = newCapacity;
+		}
+		else
+		{
+			// Move the remaining part to accommodate the replacement
+			memmove(m_str + index + _replace.m_length, m_str + index + _find.m_length, m_length - index - _find.m_length + 1);
+			// Copy the replacement string
+			memcpy(m_str + index, _replace.m_str, _replace.m_length);
+		}
+
+		// Update the length of the string
+		m_length = newLength;
+
+		// Move to the next position after the replaced occurrence
+		index += _replace.m_length;
+	}
 
 	return *this;
 }
+
 
 String& String::ReadFromConsole()
 {
