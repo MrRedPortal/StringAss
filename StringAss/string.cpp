@@ -3,6 +3,10 @@
 #include <cctype>
 #include <iostream>
 
+// Disable warning
+#pragma warning(disable:4996)
+
+
 String::String():m_str(nullptr), m_length(0), m_capacity(0)
 {
 

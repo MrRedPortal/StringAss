@@ -70,3 +70,39 @@ LessThan Operator Test Passed
 Plus Operator Test Passed
 Plus Equals Operator Test Passed
 
+Date: Tue Mar 26 18:31:15 2024 Successful: 100%
+Length Test Passed
+CharacterAt Test Passed
+EqualTo Test Passed
+Append Test Passed
+Prepend Test Passed
+ToLower Test Passed
+ToUpper Test Passed
+Find Test Passed
+Replace Test Passed
+ReadFromConsole & WriteToConsole Test Passed
+Equality Operator Test Passed
+Subscript Operator Test Passed
+Assignment Operator Test Passed
+LessThan Operator Test Passed
+Plus Operator Test Passed
+Plus Equals Operator Test Passed
+
+Date: Tue Mar 26 19:42:23 2024 Successful: 100%
+Length Test Passed
+CharacterAt Test Passed
+EqualTo Test Passed
+Append Test Passed
+Prepend Test Passed
+ToLower Test Passed
+ToUpper Test Passed
+Find Test Passed
+Replace Test Passed
+ReadFromConsole & WriteToConsole Test Passed
+Equality Operator Test Passed
+Subscript Operator Test Passed
+Assignment Operator Test Passed
+LessThan Operator Test Passed
+Plus Operator Test Passed
+Plus Equals Operator Test Passed
+

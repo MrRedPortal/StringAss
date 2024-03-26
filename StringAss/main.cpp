@@ -3,6 +3,8 @@
 #include <vector> // For vector
 #include "String.h" // Assuming your String class is declared in String.h
 
+#pragma warning(disable:4996) // Disable warning on localtime
+
 void writeTestResults(std::ofstream& logfile, double successRate, const std::vector<std::pair<std::string, bool>>& testResults) {
     // Get current date and time
     std::time_t currentTime = std::time(nullptr);

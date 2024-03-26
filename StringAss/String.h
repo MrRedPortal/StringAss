@@ -15,6 +15,7 @@ public:
 public:
 	size_t Length() const;
 	char& CharacterAt(size_t _index);
+
 	const char& CharacterAt(size_t _index) const;
 
 	bool EqualTo(const String& _other) const;
