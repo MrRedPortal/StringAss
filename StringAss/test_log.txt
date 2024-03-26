@@ -1,0 +1,72 @@
+Date: Tue Mar 26 18:04:17 2024 Successful: 93.75%
+Length Test Passed
+CharacterAt Test Passed
+EqualTo Test Passed
+Append Test Passed
+Prepend Test Passed
+ToLower Test Passed
+ToUpper Test Passed
+Find Test Passed
+Replace Test Passed
+ReadFromConsole & WriteToConsole Test Passed
+Equality Operator Test Passed
+Subscript Operator Test Failed
+Assignment Operator Test Passed
+LessThan Operator Test Passed
+Plus Operator Test Passed
+Plus Equals Operator Test Passed
+
+Date: Tue Mar 26 18:11:18 2024 Successful: 93.75%
+Length Test Passed
+CharacterAt Test Passed
+EqualTo Test Passed
+Append Test Passed
+Prepend Test Passed
+ToLower Test Passed
+ToUpper Test Passed
+Find Test Passed
+Replace Test Passed
+ReadFromConsole & WriteToConsole Test Passed
+Equality Operator Test Passed
+Subscript Operator Test Failed
+Assignment Operator Test Passed
+LessThan Operator Test Passed
+Plus Operator Test Passed
+Plus Equals Operator Test Passed
+
+Date: Tue Mar 26 18:12:17 2024 Successful: 93.75%
+Length Test Passed
+CharacterAt Test Passed
+EqualTo Test Passed
+Append Test Passed
+Prepend Test Passed
+ToLower Test Passed
+ToUpper Test Passed
+Find Test Passed
+Replace Test Passed
+ReadFromConsole & WriteToConsole Test Passed
+Equality Operator Test Passed
+Subscript Operator Test Failed
+Assignment Operator Test Passed
+LessThan Operator Test Passed
+Plus Operator Test Passed
+Plus Equals Operator Test Passed
+
+Date: Tue Mar 26 18:13:49 2024 Successful: 100%
+Length Test Passed
+CharacterAt Test Passed
+EqualTo Test Passed
+Append Test Passed
+Prepend Test Passed
+ToLower Test Passed
+ToUpper Test Passed
+Find Test Passed
+Replace Test Passed
+ReadFromConsole & WriteToConsole Test Passed
+Equality Operator Test Passed
+Subscript Operator Test Passed
+Assignment Operator Test Passed
+LessThan Operator Test Passed
+Plus Operator Test Passed
+Plus Equals Operator Test Passed
+
